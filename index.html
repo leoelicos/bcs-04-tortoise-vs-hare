@@ -5,11 +5,37 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="shortcut icon" href="" type="image/x-icon" />
 		<link rel="stylesheet" href="./style.css" />
-		<title>My Project</title>
+		<title>Tortoise vs Hare</title>
 	</head>
 	<body>
-		<h1>Project Starter</h1>
-
+		<div class="left" style="background-color:pink">
+<div class="title">
+				<h1 style="color: white;">Tortoise vs Hare, who will win?</h1>
+			<p>You can edit the <span class="blue"> values</span>, or click Submit to test</p>
+</div>
+			<div class="racers">
+			<div class="racer" id="tortoise"style="background-color: green;">
+				<h2>Tortoise</h2>
+				<div>Min speed: <input type="number" class="min-speed" id="tortoiseMinSpeed" value="3"></input></div>
+				<div>Max speed: <input type="number" class="max-speed" id="tortoiseMaxSpeed" value="5"></input></div>
+			</div>
+			<div class="racer" id="hare" style="background-color: red;">
+				<h2>Hare</h2>
+				<div>Min speed: <input type="number" class="min-speed" id="hareMinSpeed" value="0"></input></div>
+				<div>Max speed: <input type="number" class="max-speed" id="hareMaxSpeed" value="8"></input></div>
+			</div>
+		</div>
+		<div class="race-start">
+			<button id="start">Start race!</button>
+		</div>
+		</div>
+		<div class="right">
+			<div class="race">
+			<!-- results of race -->
+			<h2>WINNER!!</h2>
+			<div class="text" id="results"></div>
+		</div>
+		</div>
 		<script src="./script.js"></script>
 	</body>
 </html>
