@@ -43,7 +43,7 @@ h1 {
 }
 
 .right {
-	overflow-y: scroll;
+	overflow-y: hidden;
 }
 .title {
 	flex-basis: 164px;
@@ -84,6 +84,9 @@ h1 {
 	align-items: center;
 	justify-content: center;
 }
+.race-start {
+	flex-direction: row;
+}
 
 .racer {
 	flex: 1 1 auto;
@@ -97,6 +100,7 @@ h1 {
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	grid-gap: 0.2rem;
+	margin-bottom: 10px;
 }
 .speed {
 	text-align: right;
@@ -142,11 +146,13 @@ input[type='number'] {
 	border-radius: 1rem;
 	text-align: center;
 }
-#start {
+.race-start > button {
 	width: 60%;
-	max-width: 200px;
+	max-width: 30%;
 	border-radius: 1rem;
 	margin: 0.5rem 0;
+	height: 60%;
+	border-width: 1px;
 }
 
 .race {
@@ -154,6 +160,7 @@ input[type='number'] {
 	height: 100%;
 	align-items: flex-start;
 	justify-content: flex-start;
+	overflow-y: scroll;
 }
 
 .right {
@@ -174,4 +181,18 @@ input[type='number'] {
 
 .race {
 	box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.5), 2px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+#tortoiseWins,
+#hareWins {
+	border-radius: 5px;
+	width: 50px;
+	height: 25px;
+}
+
+#hareWins {
+	color: red;
+}
+#tortoiseWins {
+	color: green;
 }

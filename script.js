@@ -4,11 +4,13 @@ var tortoise = {
 	minSpeed: 3,
 	maxSpeed: 5,
 	currentDistance: 0,
+	totalWins: 0,
 };
 var hare = {
 	minSpeed: 0,
 	maxSpeed: 8,
 	currentDistance: 0,
+	totalWins: 0,
 };
 
 // click to run simulation
@@ -36,15 +38,15 @@ function runRace() {
 
 	// every interval, random distance between minSpeed and maxSpeed
 	while (tortoise.currentDistance < totalDistance && hare.currentDistance < totalDistance) {
-		console.log('before = ' + tortoise.currentDistance, hare.currentDistance);
+		// console.log('before = ' + tortoise.currentDistance, hare.currentDistance);
 		// tortoise
 		increment = getRandomArbitrary(tortoise.minSpeed, tortoise.maxSpeed);
 		tortoise.currentDistance += increment;
-		console.log('after tortoise = ' + tortoise.currentDistance);
+		// console.log('after tortoise = ' + tortoise.currentDistance);
 		// hare
 		increment = getRandomArbitrary(hare.minSpeed, hare.maxSpeed);
 		hare.currentDistance += increment;
-		console.log('after hare = ' + hare.currentDistance);
+		// console.log('after hare = ' + hare.currentDistance);
 	}
 
 	// outcome
@@ -60,14 +62,34 @@ function runRace() {
 function updateWinner(hareWon) {
 	if (hareWon === true) {
 		document.getElementById('results').innerHTML += `<div class="blob red" style="display:table;"><img src="./Icons8-Ios7-Animals-Running-Rabbit.ico" alt="hare" style="float: left; margin-right: 1rem;" />${results}</div>`;
+		hare.totalWins++;
+		document.getElementById('hareWins').innerHTML = hare.totalWins;
 	} else {
 		document.getElementById('results').innerHTML += `<div class="blob green" style="display:table;"><img src="./Icons8-Ios7-Animals-Turtle.ico" alt="tortoise" style="float: left; margin-right: 1rem;"/>${results}</div>`;
+		tortoise.totalWins++;
+		document.getElementById('tortoiseWins').innerHTML = hare.totalWins;
 	}
+
+	var myDiv = document.querySelector('.race');
+
+	myDiv.scrollTop = myDiv.scrollHeight;
 }
 
 // Getting a random number between two values
 function getRandomArbitrary(min, max) {
 	var result = Math.random() * (max - min) + min;
-	console.log(`random increment = ${result}`);
+	// console.log(`random increment = ${result}`);
 	return result;
 }
+
+document.getElementById('start10').addEventListener('click', () => {
+	for (var i = 0; i < 10; i++) {
+		setTimeout(runRace(), 1);
+	}
+});
+
+document.getElementById('start100').addEventListener('click', () => {
+	for (var i = 0; i < 100; i++) {
+		setTimeout(runRace(), 1);
+	}
+});
