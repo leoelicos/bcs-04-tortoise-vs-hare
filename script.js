@@ -20,8 +20,8 @@ function getRandomArbitrary(min, max) {
 function runRace() {
 	results = '';
 	// generate race distance
-	var totalDistance = Math.floor(Math.random() * 100);
-	results += `In a race distance of ${totalDistance} meters, `;
+	var totalDistance = +getRandomArbitrary(document.getElementById('raceMinDistance').value, document.getElementById('raceMaxDistance').value);
+	results += `In a race distance of ${totalDistance.toFixed(1)} meters, `;
 
 	var increment = 0;
 	// reset scores
@@ -59,9 +59,9 @@ function runRace() {
 
 function updateWinner(hareWon) {
 	if (hareWon === true) {
-		document.getElementById('results').innerHTML += `<div class="blob red">${results}</div>`;
+		document.getElementById('results').innerHTML += `<div class="blob red" style="display:table;"><img src="./Icons8-Ios7-Animals-Running-Rabbit.ico" alt="hare" style="float: left; margin-right: 1rem;" />${results}</div>`;
 	} else {
-		document.getElementById('results').innerHTML += `<div class="blob green">${results}</div>`;
+		document.getElementById('results').innerHTML += `<div class="blob green" style="display:table;"><img src="./Icons8-Ios7-Animals-Turtle.ico" alt="tortoise" style="float: left; margin-right: 1rem;"/>${results}</div>`;
 	}
 }
 

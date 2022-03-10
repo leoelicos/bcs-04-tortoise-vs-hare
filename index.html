@@ -3,38 +3,60 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="./normalize.css">
 		<link rel="shortcut icon" href="" type="image/x-icon" />
 		<link rel="stylesheet" href="./style.css" />
+		<link rel="shortcut icon" href="./Icons8-Ios7-Animals-Running-Rabbit.ico" type="image/x-icon" />
 		<title>Tortoise vs Hare</title>
 	</head>
 	<body>
-		<div class="left" style="background-color:pink">
-<div class="title">
-				<h1 style="color: white;">Tortoise vs Hare, who will win?</h1>
-			<p>You can edit the <span class="blue"> values</span>, or click Submit to test</p>
-</div>
+		<div class="left">
+			<div class="title">
+				<h1>TORTOISE vs HARE</h1>
+				<h2>SIMULATOR</h2>
+				<p>Click RACE to start!</p>
+			</div>
 			<div class="racers">
-			<div class="racer" id="tortoise"style="background-color: green;">
-				<h2>Tortoise</h2>
-				<div>Min speed: <input type="number" class="min-speed" id="tortoiseMinSpeed" value="3"></input></div>
-				<div>Max speed: <input type="number" class="max-speed" id="tortoiseMaxSpeed" value="5"></input></div>
+				<div class="racer" id="tortoise">
+					<img src="./Icons8-Ios7-Animals-Turtle.ico" alt="tortoise" />
+					<h2>Tortoise</h2>
+
+					<div class="speeds">
+						<div class="speed">Slowest speed: <input type="number" class="min-speed" id="tortoiseMinSpeed" value="3" /></div>
+						<div class="speed">Fastest speed: <input type="number" class="max-speed" id="tortoiseMaxSpeed" value="5" /></div>
+					</div>
+				</div>
+				<div class="racer" id="hare">
+					<img src="./Icons8-Ios7-Animals-Running-Rabbit.ico" alt="hare" />
+					<h2>Hare</h2>
+					<div class="speeds">
+						<div class="speed">Slowest speed: <input type="number" class="min-speed" id="hareMinSpeed" value="0" /></div>
+						<div class="speed">Fastest speed: <input type="number" class="max-speed" id="hareMaxSpeed" value="8" /></div>
+					</div>
+				</div>
 			</div>
-			<div class="racer" id="hare" style="background-color: red;">
-				<h2>Hare</h2>
-				<div>Min speed: <input type="number" class="min-speed" id="hareMinSpeed" value="0"></input></div>
-				<div>Max speed: <input type="number" class="max-speed" id="hareMaxSpeed" value="8"></input></div>
+			<div class="racers">
+				<div class="racer" id="race">
+					<img src="./NFSHE_Icon_Event_Race.webp" alt="race flag" />
+					<h2>Race</h2>
+
+					<div class="speeds">
+						<div class="speed">Shortest distance: <input type="number" id="raceMinDistance" value="1" /></div>
+						<div class="speed">Longest distance: <input type="number" id="raceMaxDistance" value="100" /></div>
+					</div>
+				</div>
 			</div>
-		</div>
-		<div class="race-start">
-			<button id="start">Start race!</button>
-		</div>
+			<div class="race-start">
+				<button id="start"><h1>RACE</h1></button>
+			</div>
 		</div>
 		<div class="right">
+			<div class="title">
+				<h1>RESULTS</p>
+			</div>
 			<div class="race">
-			<!-- results of race -->
-			<h2>WINNER!!</h2>
-			<div class="text" id="results"></div>
-		</div>
+				<div class="text" id="results"></div>
+			</div>
 		</div>
 		<script src="./script.js"></script>
 	</body>
