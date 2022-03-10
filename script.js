@@ -51,9 +51,13 @@ function runRace() {
 
 	// outcome
 	if (tortoise.currentDistance < hare.currentDistance) {
+		hare.totalWins++;
+		console.log('Hare wins = ' + hare.totalWins);
 		results += `Hare won.<br>Hare ran ${hare.currentDistance.toFixed(1)}m.<br>Tortoise ran ${tortoise.currentDistance.toFixed(1)}.`;
 		updateWinner(true);
 	} else {
+		tortoise.totalWins++;
+		console.log('Hare wins = ' + hare.totalWins);
 		results += `Tortoise won.<br>Tortoise ran ${tortoise.currentDistance.toFixed(1)}m.<br>Hare ran ${hare.currentDistance.toFixed(1)}m.`;
 		updateWinner(false);
 	}
@@ -62,11 +66,11 @@ function runRace() {
 function updateWinner(hareWon) {
 	if (hareWon === true) {
 		document.getElementById('results').innerHTML += `<div class="blob red" style="display:table;"><img src="./Icons8-Ios7-Animals-Running-Rabbit.ico" alt="hare" style="float: left; margin-right: 1rem;" />${results}</div>`;
-		hare.totalWins++;
+
 		document.getElementById('hareWins').innerHTML = hare.totalWins;
 	} else {
 		document.getElementById('results').innerHTML += `<div class="blob green" style="display:table;"><img src="./Icons8-Ios7-Animals-Turtle.ico" alt="tortoise" style="float: left; margin-right: 1rem;"/>${results}</div>`;
-		tortoise.totalWins++;
+
 		document.getElementById('tortoiseWins').innerHTML = hare.totalWins;
 	}
 
@@ -82,14 +86,14 @@ function getRandomArbitrary(min, max) {
 	return result;
 }
 
-document.getElementById('start10').addEventListener('click', () => {
-	for (var i = 0; i < 10; i++) {
-		setTimeout(runRace(), 1);
-	}
-});
+// document.getElementById('start10').addEventListener('click', () => {
+// 	for (var i = 0; i < 10; i++) {
+// 		setTimeout(runRace(), 1);
+// 	}
+// });
 
-document.getElementById('start100').addEventListener('click', () => {
-	for (var i = 0; i < 100; i++) {
-		setTimeout(runRace(), 1);
-	}
-});
+// document.getElementById('start100').addEventListener('click', () => {
+// 	for (var i = 0; i < 100; i++) {
+// 		setTimeout(runRace(), 1);
+// 	}
+// });
