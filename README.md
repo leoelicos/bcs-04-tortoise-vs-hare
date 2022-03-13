@@ -1,4 +1,24 @@
-# Kunal's Challenge
+# Tortoise VS Hare
+
+## Introduction
+
+Simulation is an important part of computer science as it allows visualization of a concept to make a relationship easier to see. Tortoise VS Hare
+
+This was a challenge given to me by a tutor at bootcamp.
+
+## Usage
+
+Go to [Tortoise vs Hare](https://leoelicos.github.io/bcs-04-tortoise-vs-hare/) to see the deployed app.
+
+## Screenshot
+
+### Tortoise VS Hare
+
+![Screenshot of Tortoise VS Hare App](./Assets/screenshots/deployed.jpg)
+
+## Credits
+
+Kunal, BCS Tutor
 
 ## User Story
 
@@ -22,15 +42,8 @@ WHEN I press a button to start the races,
 THEN I will see which human won each game
 ```
 
-### Pseudocode
+## Licence
 
-```
-tortoise run style will have constant speed over time
+[MIT Licence 2022](./LICENSE)
 
-hare run style will be faster than tortoise but will randomly take breaks
-
-```
-
-<!-- inspiration from https://slideplayer.com/slide/9391123/ -->
-
-![asdf](./slide_1.jpg)
+Copyright Leo Wong 2022
