@@ -93,7 +93,7 @@ document.getElementById('start10').addEventListener('click', () => {
 			tally.textContent = i;
 			runRace();
 		}
-	}, 10);
+	}, 5);
 });
 
 document.getElementById('start100').addEventListener('click', () => {
@@ -107,5 +107,5 @@ document.getElementById('start100').addEventListener('click', () => {
 			tally.textContent = i;
 			runRace();
 		}
-	}, 10);
+	}, 5);
 });
